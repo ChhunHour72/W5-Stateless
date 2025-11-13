@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      useInheritedMediaQuery: true,
+      // useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       theme: ThemeData.light(),
@@ -42,8 +42,6 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               WeatherCard(weather: WeatherCondition.sunny, startColor: Colors.purple, endColor: Colors.deepPurple),
               WeatherCard(weather: WeatherCondition.cloudy, startColor: Colors.green, endColor: Colors.lightGreen),
@@ -140,7 +138,7 @@ class WeatherCard extends StatelessWidget {
                         height: 130,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.4),
+                          color: Colors.purple.withValues(alpha: 0.4),
                         ),
                       ),
                     ),
